@@ -3,74 +3,23 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>Audiência Simulada no Metaverso</title>
-    <link rel="shortcut icon" href="TemplateData/favicon.ico">
-    <link rel="stylesheet" href="TemplateData/style.css">    
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/style.css">
-    <link href="css/fontawesome/css/all.min.css" rel="stylesheet">
+    <title>Unity WebGL Player | Palestra CRA</title>
   </head>
-  <body>
-    <div id="sidePanel" class="side-panel container-fluid">
-      <div class="side-panel-toggle" onclick="toggleChat()"><i class="fas fa-angle-left"></i></div>
-      <div class="banner row"></div>
-      <div class="row dash-name justify-content-around">  
-        <div class="col-3 text-center">
-          <span id="profile-picture" class="profile-picture align-middle">
-            <div id="pictureMenu" class="picture-menu picture-menu-closed col-12">
-              <label for="picture-input" class="picture-input-label">Editar</label>
-              <input id="picture-input" type="file" accept="image/png, image/jpeg, image/jpg"/>
-              <label for="delete-picture" class="picture-delete-label">Excluir</label>
-              <button id="delete-picture" class="delete-picture"></button>              
-            </div> 
-          </span>
-        </div>
-        <input id="local-peer-name" class="col-4 input-group-text type-msg" placeholder="Digite seu nome..." />
-        <button id="connect-peer" class="col-3 btn btn-primary btn-enter" disabled>Entrar</button>
-        <span id="micStatus" class="dash-mic-status mic-on">
-          <i id="micOn" class="fa-solid fa-microphone text-center m-auto"></i>
-          <i id="micOff" class="fa-solid fa-microphone-slash text-center m-auto d-none"></i>
-        </span>
-      </div>
-      <div id="chat" class="chat row chat-client">
-        <span class="scroll-to-bottom-btn"><i id="scrollToBottomBtn" class="fas fa-caret-down"></i></span>
-      </div>	
-      <div id="replyPreview" class="reply-preview reply-off" data-id="">
-        <strong id="sReplyChat" class="s-reply-chat"></strong>
-        <span class="reply-close"><i class="fas fa-close" onclick="closeReply()"></i></span>
-        <span id="replyChat" class="reply-chat">          
-        </span>
-      </div>
-      <div id="message-container" class="row msg-box">
-        <textarea id="message-content" class="type-msg col-10" placeholder="Mensagem..."></textarea>
-        <button id="send-message" class="col-2 btn btn-send-msg"><i class="fas fa-paper-plane"></i></button>
-      </div>
-    </div>
-    <div id="unity-container" class="unity-desktop">
-      <a href="#" id="exhibition-link" target="_blank" style="display: none;">Ir para exposição</a>
-      <canvas id="unity-canvas"></canvas>
-      <div id="unity-loading-bar">
-        <div id="unity-logo"></div>
-        <div id="unity-progress-bar-empty">
-          <div id="unity-progress-bar-full"></div>
-        </div>
-      </div>
-      <div id="unity-mobile-warning">
-        WebGL builds are not supported on mobile devices.
-      </div>
-      <div id="unity-footer">
-      </div>      
-    </div>
-    <script src="js/reconnecting-websocket.min.js"></script>
-    <script src="js/linkify.min.js"></script>
-    <script src="js/linkify-html.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script defer src="js/fontawesome/all.min.js"></script>
-    <script src="js/socket.io.js"></script>
-    <script src="js/mediasoupclient.min.js"></script>
-    <script src="js/EventEmitter.min.js"></script>
-    <script src="js/RoomClient.js"></script>
-    <script src="js/main.js"></script>    
-    <script src="js/js.js"></script>    
+  <body style="text-align: center">
+    <canvas id="unity-canvas" width=960 height=600 style="width: 100%; height: 100%; background: #231F20"></canvas>
+    <script src="Build/WebGL_Pedro.loader.js"></script>
+    <script>
+      createUnityInstance(document.querySelector("#unity-canvas"), {
+        dataUrl: "Build/WebGL_Pedro.data",
+        frameworkUrl: "Build/WebGL_Pedro.framework.js",
+        codeUrl: "Build/WebGL_Pedro.wasm",
+        streamingAssetsUrl: "StreamingAssets",
+        companyName: "Nucleo",
+        productName: "Palestra CRA",
+        productVersion: "0.1",
+        // matchWebGLToCanvasSize: false, // Uncomment this to separately control WebGL canvas render size and DOM element size.
+        // devicePixelRatio: 1, // Uncomment this to override low DPI rendering on high DPI displays.
+      });
+    </script>
   </body>
 </html>
