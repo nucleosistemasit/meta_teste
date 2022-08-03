@@ -6,13 +6,13 @@
     <title>Unity WebGL Player | Palestra CRA</title>
   </head>
   <body style="text-align: center">
-    <canvas id="unity-canvas" width=960 height=600 style="width: 100%; height: 100%; background: #231F20"></canvas>
-    <script src="Build/WebGL_Pedro.loader.js"></script>
+    <canvas id="unity-canvas" width=960 height=600 style="width: 960px; height: 600px; background: #231F20"></canvas>
+    <script src="Build/WebGL_Exame.loader.js"></script>
     <script>
       createUnityInstance(document.querySelector("#unity-canvas"), {
-        dataUrl: "Build/WebGL_Pedro.data",
-        frameworkUrl: "Build/WebGL_Pedro.framework.js",
-        codeUrl: "Build/WebGL_Pedro.wasm",
+        dataUrl: "Build/WebGL_Exame.data",
+        frameworkUrl: "Build/WebGL_Exame.framework.js",
+        codeUrl: "Build/WebGL_Exame.wasm",
         streamingAssetsUrl: "StreamingAssets",
         companyName: "Nucleo",
         productName: "Palestra CRA",
